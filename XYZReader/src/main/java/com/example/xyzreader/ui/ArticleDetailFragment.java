@@ -207,8 +207,8 @@ public class ArticleDetailFragment extends Fragment implements
             Log.d(TAG, "PHOTO_URL: " + url);
 
             Picasso.with(getActivity()).load(url)
-                    .error(R.drawable.logo)
-                    .placeholder(R.drawable.logo)
+                    .error(R.color.theme_primary_dark)
+                    .placeholder(R.color.theme_primary_dark)
                     .into(new Target() {
                         @Override
                         public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
