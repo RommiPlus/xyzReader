@@ -9,5 +9,9 @@
     <dimen name="fab_margin">24dp</dimen>
     <dimen name="title_margin">32dp</dimen>
     <dimen name="frame_elevation">4dp</dimen>
-
+    <dimen name="image_length">48dp</dimen>
+    
+    <dimen name="toolbar_height">48dp</dimen>
+    <dimen name="parallax_height">12dp</dimen>
+    <dimen name="appbar_elevation">6dp</dimen>
 </resources>

@@ -1,5 +1,6 @@
 package com.example.xyzreader.ui;
 
+import android.annotation.TargetApi;
 import android.app.ActivityOptions;
 import android.app.LoaderManager;
 import android.content.BroadcastReceiver;
@@ -50,7 +51,9 @@ public class ArticleListActivity extends AppCompatActivity implements
 
         CollapsingToolbarLayout collapsingToolbar =
                 (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
-        collapsingToolbar.setTitle("XYZ Reader");
+        if (collapsingToolbar != null) {
+            collapsingToolbar.setTitle("XYZ Reader");
+        }
 
         mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh_layout);
 
@@ -79,6 +82,29 @@ public class ArticleListActivity extends AppCompatActivity implements
         StaggeredGridLayoutManager sglm =
                 new StaggeredGridLayoutManager(columnCount, StaggeredGridLayoutManager.VERTICAL);
         mRecyclerView.setLayoutManager(sglm);
+
+        final View parallaxView = findViewById(R.id.parallax_bar);
+        if (null != parallaxView) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    getWindow().setStatusBarColor(getResources().getColor(R.color.theme_primary));
+                }
+
+                mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+                    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
+                    @Override
+                    public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                        super.onScrolled(recyclerView, dx, dy);
+                        int max = parallaxView.getHeight();
+                        if (dy > 0) {
+                            parallaxView.setTranslationY(Math.max(-max, parallaxView.getTranslationY() - dy / 2));
+                        } else {
+                            parallaxView.setTranslationY(Math.min(0, parallaxView.getTranslationY() - dy / 2));
+                        }
+                    }
+                });
+            }
+        }
 
         getLoaderManager().initLoader(0, null, this);
         if (savedInstanceState == null) {
