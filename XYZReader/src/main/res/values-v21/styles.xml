@@ -27,5 +27,13 @@
         <item name="android:textColorSecondary">@color/theme_secondary_text</item>
     </style>
 
+    <style name="Theme.Bacon.Home" parent="Theme.Bacon">
+        <item name="android:windowReenterTransition">@transition/grid_reenter</item>
+    </style>
+
+    <style name="Theme.Bacon.Detail" parent="Theme.Bacon">
+        <item name="android:windowSharedElementEnterTransition">@transition/shared_photo</item>
+        <item name="android:windowEnterTransition">@transition/detail_text_enter</item>
+    </style>
 
 </resources>

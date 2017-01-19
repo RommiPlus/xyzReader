@@ -25,6 +25,10 @@
         <item name="android:textColorSecondary">@color/theme_secondary_text</item>
     </style>
 
+    <style name="Theme.Bacon.Home" parent="Theme.Bacon" />
+
+    <style name="Theme.Bacon.Detail" parent="Theme.Bacon" />
+
     <style name="Display1.lite" parent="@style/TextAppearance.AppCompat.Display1">
         <item name="android:textColor">@android:color/white</item>
         <item name="android:textStyle">bold</item>
