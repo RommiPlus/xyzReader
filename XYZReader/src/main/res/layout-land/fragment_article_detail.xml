@@ -23,7 +23,7 @@
 
     <com.example.xyzreader.ui.DrawInsetsFrameLayout
         android:id="@+id/draw_insets_frame_layout"
-        android:layout_width="360dp"
+        android:layout_width="@dimen/content_width"
         android:layout_height="match_parent"
         android:layout_gravity="center"
         android:layout_marginTop="@dimen/detail_content_margin">
