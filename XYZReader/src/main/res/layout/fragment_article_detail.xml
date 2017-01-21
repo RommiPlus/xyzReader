@@ -1,14 +1,14 @@
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+                                                 xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                 android:layout_width="match_parent"
+                                                 android:layout_height="match_parent">
 
     <com.example.xyzreader.ui.DrawInsetsFrameLayout
         android:id="@+id/draw_insets_frame_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.example.xyzreader.ui.ObservableScrollView
+        <android.support.v4.widget.NestedScrollView
             android:id="@+id/scrollview"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -26,12 +26,12 @@
                         android:id="@+id/photo"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/detail_card_top_margin"
-                        android:scaleType="centerCrop" />
+                        android:scaleType="centerCrop"/>
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/detail_card_top_margin"
-                        android:background="@drawable/photo_background_protection" />
+                        android:background="@drawable/photo_background_protection"/>
 
                 </FrameLayout>
 
@@ -68,13 +68,13 @@
                             android:paddingBottom="@dimen/detail_metabar_title_bottom_padding"
                             android:textColor="@android:color/white"
                             android:textSize="@dimen/detail_title_text_size"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"/>
 
                         <TextView
                             android:id="@+id/article_byline"
                             style="?android:attr/textAppearanceSmall"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"/>
                     </LinearLayout>
 
                     <TextView
@@ -86,11 +86,11 @@
                         android:layout_marginRight="@dimen/detail_inner_horiz_margin"
                         android:lineSpacingMultiplier="@fraction/detail_body_line_spacing_multiplier"
                         android:paddingBottom="@dimen/detail_body_bottom_margin"
-                        android:textColorLink="@color/theme_accent" />
+                        android:textColorLink="@color/theme_accent"/>
 
                 </com.example.xyzreader.ui.MaxWidthLinearLayout>
             </FrameLayout>
-        </com.example.xyzreader.ui.ObservableScrollView>
+        </android.support.v4.widget.NestedScrollView>
 
     </com.example.xyzreader.ui.DrawInsetsFrameLayout>
 
@@ -98,7 +98,7 @@
         android:id="@+id/share_fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|right|end"
+        android:layout_gravity="top|left"
         android:layout_marginBottom="@dimen/fab_margin"
         android:layout_marginEnd="@dimen/fab_margin"
         android:layout_marginRight="@dimen/fab_margin"
@@ -106,5 +106,7 @@
         android:src="@drawable/ic_share"
         app:elevation="@dimen/fab_elevation"
         app:fabSize="normal"
-        app:pressedTranslationZ="@dimen/fab_press_translation_z" />
+        app:layout_anchor="@+id/draw_insets_frame_layout"
+        app:layout_anchorGravity="bottom|right"
+        app:pressedTranslationZ="@dimen/fab_press_translation_z"/>
 </android.support.design.widget.CoordinatorLayout>

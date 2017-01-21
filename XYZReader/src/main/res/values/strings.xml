@@ -10,5 +10,6 @@
     <string name="up">Up</string>
     <string name="fab_clicked">fab clicked</string>
     <string name="transition_photo">transition_photo</string>
+    <string name="scroll_aware_fab_behavior">com.example.xyzreader.behavior.ScrollAwareFABBehavior</string>
 
 </resources>
