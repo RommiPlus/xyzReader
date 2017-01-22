@@ -104,6 +104,7 @@
         android:layout_marginEnd="@dimen/fab_margin"
         android:layout_marginRight="@dimen/fab_margin"
         android:contentDescription="@string/action_share"
+        app:layout_behavior="@string/scroll_aware_fab_behavior"
         android:src="@drawable/ic_share"
         app:elevation="@dimen/fab_elevation"
         app:fabSize="normal"

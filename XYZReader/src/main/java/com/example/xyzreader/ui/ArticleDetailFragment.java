@@ -139,11 +139,11 @@ public class ArticleDetailFragment extends Fragment implements
 
                 if (scrollY > oldScrollY) {
                     Log.i(TAG, "Scroll DOWN");
-                    mShareFab.hide();
+//                    mShareFab.hide();
                 }
                 if (scrollY < oldScrollY) {
                     Log.i(TAG, "Scroll UP");
-                    mShareFab.show();
+//                    mShareFab.show();
                 }
 
                 if (scrollY == 0) {
